@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>个人介绍 · 等风来</title>
+    <!-- Font Awesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        /* ===== 全局重置 & 字体 ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, #f6f9fc 0%, #e6f0f5 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            padding: 1.5rem;
+        }
+
+        /* ===== 卡片容器 ===== */
+        .card {
+            max-width: 480px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 48px;
+            padding: 2.5rem 2rem 2.2rem;
+            box-shadow: 0 20px 48px -12px rgba(0, 20, 30, 0.25),
+                        0 8px 24px -6px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: transform 0.25s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 32px 64px -16px rgba(0, 40, 60, 0.30);
+        }
+
+        /* ===== 头像 ===== */
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 1.2rem;
+            border: 4px solid white;
+            box-shadow: 0 12px 28px -8px rgba(0, 20, 30, 0.20);
+            background: #d9e2e8;
+            transition: transform 0.3s ease;
+        }
+
+        .avatar:hover {
+            transform: scale(1.03);
+        }
+
+        /* ===== 姓名 & 头衔 ===== */
+        .name {
+            font-size: 2rem;
+            font-weight: 650;
+            letter-spacing: -0.02em;
+            color: #0b1c2a;
+            margin-bottom: 0.15rem;
+        }
+
+        .title {
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #2c5f7a;
+            background: rgba(44, 95, 122, 0.10);
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            margin-top: 0.1rem;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.3px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(44, 95, 122, 0.08);
+        }
+
+        /* ===== 简介文字 ===== */
+        .bio {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #1f3b4a;
+            margin: 1rem 0 1.6rem;
+            padding: 0 0.25rem;
+            font-weight: 400;
+            letter-spacing: 0.2px;
+        }
+
+        .bio i {
+            color: #3a7b9c;
+            margin: 0 0.2rem;
+        }
+
+        /* ===== 分隔装饰 ===== */
+        .divider {
+            width: 56px;
+            height: 3px;
+            background: linear-gradient(90deg, #3a7b9c, #7bb3d0);
+            border-radius: 8px;
+            margin: 0 auto 1.4rem;
+            opacity: 0.5;
+        }
+
+        /* ===== 技能标签 ===== */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.6rem 0.7rem;
+            margin-bottom: 2rem;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            padding: 0.35rem 1.1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #154257;
+            letter-spacing: 0.2px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            transition: all 0.2s ease;
+        }
+
+        .skill-tag:hover {
+            background: rgba(44, 95, 122, 0.08);
+            border-color: #7bb3d0;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px -8px rgba(0, 40, 60, 0.15);
+        }
+
+        /* ===== 社交链接 ===== */
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 1.4rem;
+            margin-top: 0.2rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            color: #1f3b4a;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .social-link:hover {
+            background: white;
+            color: #0b2a3b;
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 12px 28px -10px rgba(0, 40, 60, 0.20);
+            border-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .social-link .fab,
+        .social-link .fas {
+            line-height: 1;
+        }
+
+        /* 个别品牌色微调 (hover) */
+        .social-link:hover .fa-github {
+            color: #24292f;
+        }
+        .social-link:hover .fa-twitter {
+            color: #1d9bf0;
+        }
+        .social-link:hover .fa-linkedin-in {
+            color: #0a66c2;
+        }
+        .social-link:hover .fa-envelope {
+            color: #c0392b;
+        }
+
+        /* ===== 响应式微调 ===== */
+        @media (max-width: 500px) {
+            .card {
+                padding: 2rem 1.5rem 1.8rem;
+                border-radius: 32px;
+            }
+            .avatar {
+                width: 100px;
+                height: 100px;
+            }
+            .name {
+                font-size: 1.7rem;
+            }
+            .title {
+                font-size: 0.9rem;
+                padding: 0.2rem 1rem;
+            }
+            .bio {
+                font-size: 0.95rem;
+            }
+            .social-link {
+                width: 44px;
+                height: 44px;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .card {
+                padding: 1.5rem 1rem 1.5rem;
+            }
+            .skills {
+                gap: 0.4rem;
+            }
+            .skill-tag {
+                font-size: 0.7rem;
+                padding: 0.25rem 0.8rem;
+            }
+            .socials {
+                gap: 1rem;
+            }
+        }
+
+        /* ===== 小彩蛋：加载时淡入 ===== */
+        .card {
+            animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card" role="main" aria-label="个人介绍卡片">
+
+        <!-- 头像 -->
+        <img
+        class="avatar"
+        src="https://ui-avatars.com/api/?name=等风来&size=120&background=2c5f7a&color=fff&bold=true&font-size=0.5"
+        alt="等风来头像"
+        />
+
+        <!-- 姓名 & 头衔 -->
+        <h1 class="name">等风来</h1>
+        <span class="title">✨ 全栈开发 · 创新技术爱好者</span>
+
+        <!-- 简介 -->
+        <p class="bio">
+            <i class="fas fa-code"></i> 用代码构建优雅体验 ·
+            热爱开源 & 设计思维 ·
+            <i class="fas fa-rocket"></i> 持续探索前沿技术
+        </p>
+
+        <!-- 装饰分隔线 -->
+        <div class="divider"></div>
+
+        <!-- 技能标签 -->
+        <div class="skills">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Vue</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">Tailwind</span>
+        </div>
+
+        <!-- 社交链接 -->
+        <div class="socials">
+            <a href="#" class="social-link" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="发送邮件">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- ===== 简单交互（控制台欢迎） ===== -->
+    <script>
+        (function() {
+            console.log('%c👋 欢迎来到等风来的个人空间', 'font-size:1.2rem; font-weight:600; color:#2c5f7a;');
+            console.log('%c✨ 用代码探索世界 · 保持好奇', 'font-size:0.95rem; color:#3a7b9c;');
+        })();
+    </script>
+
+</body>
+</html>
