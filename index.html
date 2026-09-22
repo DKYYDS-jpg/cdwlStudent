@@ -1,320 +1,155 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>个人介绍 · 等风来</title>
-    <!-- Font Awesome 图标库 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国传统文化故事:悬梁刺股</title>
     <style>
-        /* ===== 全局重置 & 字体 ===== */
+        /* 基础重置 */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         body {
+            background-color: #f2f2f2;
+            font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(145deg, #f6f9fc 0%, #e6f0f5 100%);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            padding: 1.5rem;
+            padding: 20px;
         }
 
-        /* ===== 卡片容器 ===== */
+        /* 主卡片容器 */
         .card {
-            max-width: 480px;
+            background-color: #fdfcf3; /* 暖色调米白色 */
             width: 100%;
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-radius: 48px;
-            padding: 2.5rem 2rem 2.2rem;
-            box-shadow: 0 20px 48px -12px rgba(0, 20, 30, 0.25),
-                        0 8px 24px -6px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            transition: transform 0.25s ease, box-shadow 0.3s ease;
-            text-align: center;
+            max-width: 800px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            padding-bottom: 40px;
         }
 
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 32px 64px -16px rgba(0, 40, 60, 0.30);
-        }
-
-        /* ===== 头像 ===== */
-        .avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            display: block;
-            margin: 0 auto 1.2rem;
-            border: 4px solid white;
-            box-shadow: 0 12px 28px -8px rgba(0, 20, 30, 0.20);
-            background: #d9e2e8;
-            transition: transform 0.3s ease;
-        }
-
-        .avatar:hover {
-            transform: scale(1.03);
-        }
-
-        /* ===== 姓名 & 头衔 ===== */
-        .name {
-            font-size: 2rem;
-            font-weight: 650;
-            letter-spacing: -0.02em;
-            color: #0b1c2a;
-            margin-bottom: 0.15rem;
-        }
-
-        .title {
-            display: inline-block;
-            font-size: 1rem;
-            font-weight: 500;
-            color: #2c5f7a;
-            background: rgba(44, 95, 122, 0.10);
-            padding: 0.3rem 1.2rem;
-            border-radius: 40px;
-            margin-top: 0.1rem;
-            margin-bottom: 1.2rem;
-            letter-spacing: 0.3px;
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(44, 95, 122, 0.08);
-        }
-
-        /* ===== 简介文字 ===== */
-        .bio {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: #1f3b4a;
-            margin: 1rem 0 1.6rem;
-            padding: 0 0.25rem;
-            font-weight: 400;
-            letter-spacing: 0.2px;
-        }
-
-        .bio i {
-            color: #3a7b9c;
-            margin: 0 0.2rem;
-        }
-
-        /* ===== 分隔装饰 ===== */
-        .divider {
-            width: 56px;
-            height: 3px;
-            background: linear-gradient(90deg, #3a7b9c, #7bb3d0);
-            border-radius: 8px;
-            margin: 0 auto 1.4rem;
-            opacity: 0.5;
-        }
-
-        /* ===== 技能标签 ===== */
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.6rem 0.7rem;
-            margin-bottom: 2rem;
-        }
-
-        .skill-tag {
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            border: 1px solid rgba(255, 255, 255, 0.7);
-            padding: 0.35rem 1.1rem;
-            border-radius: 40px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: #154257;
-            letter-spacing: 0.2px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-            transition: all 0.2s ease;
-        }
-
-        .skill-tag:hover {
-            background: rgba(44, 95, 122, 0.08);
-            border-color: #7bb3d0;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px -8px rgba(0, 40, 60, 0.15);
-        }
-
-        /* ===== 社交链接 ===== */
-        .socials {
+        /* 顶部装饰区域 (由于没有原图，这里用渐变和文字占位，你可以替换为实际的灯笼图片) */
+        .banner {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(to bottom, #fff5f5, #fdfcf3);
+            position: relative;
             display: flex;
             justify-content: center;
-            gap: 1.4rem;
-            margin-top: 0.2rem;
-        }
-
-        .social-link {
-            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            border: 1px solid rgba(255, 255, 255, 0.7);
-            color: #1f3b4a;
-            font-size: 1.3rem;
-            text-decoration: none;
-            transition: all 0.25s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            border-bottom: 1px solid rgba(0,0,0,0.03);
         }
 
-        .social-link:hover {
-            background: white;
-            color: #0b2a3b;
-            transform: translateY(-4px) scale(1.04);
-            box-shadow: 0 12px 28px -10px rgba(0, 40, 60, 0.20);
-            border-color: rgba(255, 255, 255, 0.9);
+        /* 模拟图片的提示文字（实际使用时，请删除此段并插入 <img> 标签） */
+        /* .banner::after {
+            content: "此处放置顶部灯笼背景图";
+            color: #d0a0a0;
+            font-size: 14px;
+            letter-spacing: 2px;
+        } */
+
+        /* 如果你有图片，可以使用下面的样式： */
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+ 
+
+        /* 主标题 */
+        h1 {
+            text-align: center;
+            font-size: 26px;
+            color: #1a1a1a;
+            margin: 30px 0 20px 0;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
-        .social-link .fab,
-        .social-link .fas {
-            line-height: 1;
+        /* 文本内容 */
+        .content {
+            padding: 0 40px;
+            margin-bottom: 30px;
         }
 
-        /* 个别品牌色微调 (hover) */
-        .social-link:hover .fa-github {
-            color: #24292f;
-        }
-        .social-link:hover .fa-twitter {
-            color: #1d9bf0;
-        }
-        .social-link:hover .fa-linkedin-in {
-            color: #0a66c2;
-        }
-        .social-link:hover .fa-envelope {
-            color: #c0392b;
+        .content p {
+            font-size: 16px;
+            color: #333333;
+            line-height: 1.8;
+            text-align: justify;
+            text-indent: 2em; /* 首行缩进 */
+            margin-bottom: 12px;
         }
 
-        /* ===== 响应式微调 ===== */
-        @media (max-width: 500px) {
-            .card {
-                padding: 2rem 1.5rem 1.8rem;
-                border-radius: 32px;
-            }
-            .avatar {
-                width: 100px;
-                height: 100px;
-            }
-            .name {
-                font-size: 1.7rem;
-            }
-            .title {
-                font-size: 0.9rem;
-                padding: 0.2rem 1rem;
-            }
-            .bio {
-                font-size: 0.95rem;
-            }
-            .social-link {
-                width: 44px;
-                height: 44px;
-                font-size: 1.1rem;
-            }
+        /* 底部成语网格 */
+        .idiom-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px 10px;
+            padding: 0 40px;
+            max-width: 650px;
+            margin: 0 auto;
         }
 
-        @media (max-width: 380px) {
-            .card {
-                padding: 1.5rem 1rem 1.5rem;
-            }
-            .skills {
-                gap: 0.4rem;
-            }
-            .skill-tag {
-                font-size: 0.7rem;
-                padding: 0.25rem 0.8rem;
-            }
-            .socials {
-                gap: 1rem;
-            }
+        .idiom-item {
+            font-size: 17px;
+            color: #222222;
+            text-align: center;
+            font-weight: 500;
         }
 
-        /* ===== 小彩蛋：加载时淡入 ===== */
-        .card {
-            animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        @keyframes fadeUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
+        /* 响应式调整：手机端时网格变为两列或一列 */
+        @media (max-width: 600px) {
+            .content {
+                padding: 0 20px;
+            }
+            .idiom-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 0 20px;
+            }
+            h1 {
+                font-size: 22px;
+                padding: 0 15px;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="card" role="main" aria-label="个人介绍卡片">
-
-        <!-- 头像 -->
-        <img
-        class="avatar"
-        src="https://ui-avatars.com/api/?name=等风来&size=120&background=2c5f7a&color=fff&bold=true&font-size=0.5"
-        alt="等风来头像"
-        />
-
-        <!-- 姓名 & 头衔 -->
-        <h1 class="name">等风来</h1>
-        <span class="title">✨ 全栈开发 · 创新技术爱好者</span>
-
-        <!-- 简介 -->
-        <p class="bio">
-            <i class="fas fa-code"></i> 用代码构建优雅体验 ·
-            热爱开源 & 设计思维 ·
-            <i class="fas fa-rocket"></i> 持续探索前沿技术
-        </p>
-
-        <!-- 装饰分隔线 -->
-        <div class="divider"></div>
-
-        <!-- 技能标签 -->
-        <div class="skills">
-            <span class="skill-tag">React</span>
-            <span class="skill-tag">Vue</span>
-            <span class="skill-tag">Node.js</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">TypeScript</span>
-            <span class="skill-tag">Tailwind</span>
+    <div class="card">
+        <!-- 顶部图片区域 -->
+        <div class="banner">
+            <!-- 建议：将你原图中的顶部灯笼部分裁剪下来，保存为图片，然后替换下面的注释 -->
+            <img src="./imgs/灯笼.jpg" alt="灯笼背景">
         </div>
 
-        <!-- 社交链接 -->
-        <div class="socials">
-            <a href="#" class="social-link" aria-label="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="Twitter">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="发送邮件">
-                <i class="fas fa-envelope"></i>
-            </a>
+        <!-- 标题 -->
+        <h1>中国传统文化故事:悬梁刺股</h1>
+
+        <!-- 文本内容 -->
+        <div class="content">
+            <p>我们伟大的祖国有着非常悠久的历史。按照古代的传统说法，从传说中的黄帝到现在，大约有四千多年的历史，通常叫做“上下五千年”。期间流传有许多的神话，历史故事等。快来一起了解下我国的文化历史吧。</p>
+            <p>悬梁刺股这一历史典故表现了孙敬、苏秦好学勤读的刻苦精神，表明只要付出时间和精力就会有收获的道理，用以激励人发愤读书学习。如果想要把事情做成功，就要下定决心，目标明确。要肯吃苦，肯努力。世上无难事只怕有心人。</p>
         </div>
 
+        <!-- 成语列表 -->
+        <div class="idiom-grid">
+            <div class="idiom-item">1. 悬梁刺股</div>
+            <div class="idiom-item">2. 画龙点睛</div>
+            <div class="idiom-item">3. 铁杵磨针</div>
+            <div class="idiom-item">4. 毛遂自荐</div>
+            <div class="idiom-item">5. 孔融让梨</div>
+            <div class="idiom-item">6. 水滴石穿</div>
+            <div class="idiom-item">7. 塞翁失马</div>
+            <div class="idiom-item">8. 自相矛盾</div>
+            <div class="idiom-item">9. 刻舟求剑</div>
+        </div>
     </div>
-
-    <!-- ===== 简单交互（控制台欢迎） ===== -->
-    <script>
-        (function() {
-            console.log('%c👋 欢迎来到等风来的个人空间', 'font-size:1.2rem; font-weight:600; color:#2c5f7a;');
-            console.log('%c✨ 用代码探索世界 · 保持好奇', 'font-size:0.95rem; color:#3a7b9c;');
-        })();
-    </script>
 
 </body>
 </html>
