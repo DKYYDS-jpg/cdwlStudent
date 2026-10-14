@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>简易灯箱画廊设计</title>
+    <style>
+        /* 1. 基础页面样式 */
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: "Microsoft YaHei", sans-serif;
+            background-color: #f0f0f0; /* 页面最外层的灰色背景 */
+        }
+
+        /* 2. 画廊主容器（绿色区域） */
+        .gallery-container {
+            width: 800px;
+            margin: 0 auto;
+            background-color: #2fc09c; /* 绿色背景，可根据需要调整颜色 */
+            padding: 20px 0;
+            box-sizing: border-box;
+        }
+
+        /* 3. 顶部标题 */
+        .gallery-title {
+            text-align: center;
+            color: #ffffff;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+
+        /* 4. 红色分割线 */
+        .red-line {
+            border: none;
+            height: 3px;
+            background-color: #ff0000;
+            margin: 0 20px 20px 20px;
+        }
+
+        /* 5. 滚动区域（只显示一排，多余的隐藏） */
+        .scroll-wrapper {
+            width: 100%;
+            overflow: hidden; /* 关键：隐藏超出区域的内容 */
+            white-space: nowrap;
+            padding-bottom: 10px;
+        }
+
+        /* 6. 小图列表（横向排列） */
+        .thumbnail-list {
+            display: flex;
+            width: max-content;
+            padding: 0 20px;
+        }
+
+        /* 7. 单个小图项 */
+        .thumbnail-item {
+            text-align: center;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .thumbnail-item span {
+            display: block;
+            color: #0056b3; /* 小图标题的蓝色 */
+            font-size: 14px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .thumbnail-item img {
+            width: 90px;
+            height: 60px;
+            object-fit: cover; /* 保证图片不变形 */
+            border: 2px solid transparent;
+        }
+
+        /* 鼠标悬停在小图上时的效果 */
+        .thumbnail-item img:hover {
+            border: 2px solid #ff0000;
+        }
+
+        /* 8. 底部大图区域 */
+        .big-image-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .big-image-wrapper img {
+            width: 600px;
+            height: 350px;
+            object-fit: cover;
+            border: 2px solid #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 画廊主容器 -->
+    <div class="gallery-container">
+        <!-- 标题 -->
+        <h2 class="gallery-title">简易灯箱画廊设计</h2>
+        <!-- 红线 -->
+        <hr class="red-line">
+
+        <!-- 滚动区域 -->
+        <div class="scroll-wrapper" id="scrollWrapper">
+            <!-- 小图列表 -->
+            <div class="thumbnail-list" id="thumbnailList">
+                <!-- 第一组图片 -->
+                <div class="thumbnail-item" onclick="changeBigImage('../imgs/画廊/t1.jpg')">
+                    <span>T1</span>
+                    <img src="../imgs/画廊/t1.jpg" alt="T1">
+                </div>
+                <div class="thumbnail-item" onclick="changeBigImage('../imgs/画廊/t2.jpg')">
+                    <span>T2</span>
+                    <img src="../imgs/画廊/t2.jpg" alt="T2">
+                </div>
+                <div class="thumbnail-item" onclick="changeBigImage('../imgs/画廊/t3.jpg')">
+                    <span>T3</span>
+                    <img src="../imgs/画廊/t3.jpg" alt="T3">
+                </div>
+                <div class="thumbnail-item" onclick="changeBigImage('../imgs/画廊/t4.jpg')">
+                    <span>T4</span>
+                    <img src="../imgs/画廊/t4.jpg" alt="T4">
+                </div>
+                <div class="thumbnail-item" onclick="changeBigImage('../imgs/画廊/t5.jpg')">
+                    <span>T5</span>
+                    <img src="../imgs/画廊/t5.jpg" alt="T5">
+                </div>
+                <div class="thumbnail-item" onclick="changeBigImage('../imgs/画廊/t6.jpg')">
+                    <span>T6</span>
+                    <img src="../imgs/画廊/t6.jpg" alt="T6">
+                </div>
+                <div class="thumbnail-item" onclick="changeBigImage('../imgs/画廊/t7.jpg')">
+                    <span>T7</span>
+                    <img src="../imgs/画廊/t7.jpg" alt="T7">
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部大图 -->
+        <div class="big-image-wrapper">
+            <!-- 默认显示第一张大图 -->
+            <img id="bigImage" src="../imgs/画廊/t1.jpg" alt="大图展示">
+        </div>
+    </div>
+
+    <!-- 交互逻辑 -->
+    <script>
+        // 获取页面元素
+        const scrollWrapper = document.getElementById('scrollWrapper');
+        const thumbnailList = document.getElementById('thumbnailList');
+        const bigImage = document.getElementById('bigImage');
+        let timer = null; // 用于存储定时器
+
+        // 1. 实现无缝滚动的技巧：将小图列表复制一份追加到后面
+        thumbnailList.innerHTML += thumbnailList.innerHTML;
+
+        // 2. 开启滚动
+        function startScroll() {
+            // 每隔 20 毫秒滚动 1 像素
+            timer = setInterval(() => {
+                scrollWrapper.scrollLeft += 1;
+                
+                // 如果滚动距离超过了一半（也就是第一组图片的宽度），立刻重置为 0，实现无缝循环
+                if (scrollWrapper.scrollLeft >= thumbnailList.scrollWidth / 2) {
+                    scrollWrapper.scrollLeft = 0;
+                }
+            }, 20);
+        }
+
+        // 3. 停止滚动
+        function stopScroll() {
+            clearInterval(timer);
+        }
+
+        // 4. 鼠标移入停止滚动，移出继续滚动
+        scrollWrapper.addEventListener('mouseenter', stopScroll);
+        scrollWrapper.addEventListener('mouseleave', startScroll);
+
+        // 5. 点击小图切换大图
+        function changeBigImage(imgSrc) {
+            bigImage.src = imgSrc;
+        }
+
+        // 初始化启动滚动
+        startScroll();
+    </script>
+
+</body>
+</html>
