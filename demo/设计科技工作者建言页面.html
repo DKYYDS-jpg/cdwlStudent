@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>科技工作者建言留言板</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 30px;
+      font-family: "Microsoft YaHei", Arial, sans-serif;
+      background: #eef4fa;
+      color: #333;
+    }
+
+    /* 外层 DIV 布局 */
+    .message-board {
+      width: 820px;
+      margin: 0 auto;
+      background: #f8fcff;
+      border: 1px solid #b9d4ea;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .board-header {
+      height: 64px;
+      line-height: 64px;
+      padding: 0 22px;
+      background: linear-gradient(to bottom, #dcecff, #bcd9f5);
+      border-bottom: 1px solid #9fc4e3;
+    }
+
+    .board-header h1 {
+      float: left;
+      margin: 0;
+      font-size: 28px;
+      color: #0b3a82;
+      letter-spacing: 2px;
+    }
+
+    .board-header span {
+      float: right;
+      color: #0b3a82;
+      font-size: 14px;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    .board-content {
+      padding: 16px 24px 20px;
+    }
+
+    .form-title {
+      color: #d00;
+      font-size: 14px;
+      margin: 4px 0 10px 4px;
+    }
+
+    /* 表格布局 */
+    .form-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .form-table td {
+      padding: 8px 6px;
+      vertical-align: middle;
+      border-bottom: 1px dashed #d8e8f5;
+    }
+
+    .form-table td.label {
+      width: 110px;
+      text-align: right;
+      color: #2e7d32;
+      white-space: nowrap;
+    }
+
+    .label-red {
+      color: #d00;
+    }
+
+    .form-table input[type="text"] {
+      width: 220px;
+      height: 26px;
+      padding: 2px 6px;
+      border: 1px solid #a9c9e4;
+    }
+
+    .form-table textarea {
+      width: 560px;
+      height: 110px;
+      padding: 6px;
+      border: 1px solid #a9c9e4;
+      resize: vertical;
+    }
+
+    .form-table select {
+      height: 28px;
+      border: 1px solid #a9c9e4;
+    }
+
+    .radio-group {
+      line-height: 28px;
+    }
+
+    .radio-group label {
+      margin-right: 10px;
+    }
+
+    .note {
+      margin: 14px 0 8px;
+      font-size: 13px;
+      color: #1769c9;
+      line-height: 1.8;
+    }
+
+    .actions {
+      text-align: center;
+      padding: 12px 0;
+    }
+
+    .actions button {
+      min-width: 80px;
+      height: 28px;
+      margin: 0 8px;
+      border: 1px solid #8fb4d4;
+      background: linear-gradient(#fff, #e3eff9);
+      cursor: pointer;
+    }
+
+    .rules {
+      margin: 10px 0 0;
+      padding: 12px 20px 12px 42px;
+      background: #f2f8fe;
+      border: 1px solid #d6e8f7;
+      color: #333;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .rules li {
+      margin: 2px 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="message-board">
+  <div class="board-header clearfix">
+    <h1>留言板</h1>
+    <span>科技工作者建言</span>
+  </div>
+
+  <div class="board-content">
+    <div class="form-title">发表留言</div>
+
+    <form action="#" method="post">
+      <table class="form-table">
+        <tr>
+          <td class="label">姓 名：</td>
+          <td><input type="text" name="name" id="name"></td>
+        </tr>
+        <tr>
+          <td class="label">电子邮件：</td>
+          <td><input type="text" name="email" id="email"></td>
+        </tr>
+        <tr>
+          <td class="label">分 类：</td>
+          <td class="radio-group">
+            <label class="label-red">科技工作者建言</label>
+            <label><input type="radio" name="secret" value="公开" checked> 不保密</label>
+            <label><input type="radio" name="secret" value="保密"> 保密</label>
+
+            <label style="margin-left: 18px;">
+              留言类型：
+              <select name="type">
+                <option value="建言">建言</option>
+                <option value="咨询">咨询</option>
+                <option value="其他">其他</option>
+              </select>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td class="label">留 言：</td>
+          <td>
+            <textarea name="message" id="message"></textarea>
+          </td>
+        </tr>
+      </table>
+
+      <p class="note">
+        注：如果您的留言不便公开，请选择“保密”选项，提交后可凭系统反馈给您的留言编号、查询密码和您的姓名查询回复。
+      </p>
+
+      <div class="actions">
+        <button type="submit">提交</button>
+        <button type="reset">清空</button>
+      </div>
+    </form>
+
+    <ul class="rules">
+      <li>请遵守国家有关法律、法规，尊重网上道德，承担一切因您的行为而直接或间接引起法律责任。</li>
+      <li>本网站拥有管理笔名和留言的一切权利。</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>

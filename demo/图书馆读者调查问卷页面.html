@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>图书馆读者调查问卷</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 30px;
+      font-family: "Microsoft YaHei", Arial, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+    }
+
+    .survey-page {
+      width: 820px;
+      margin: 0 auto;
+      padding: 24px 30px 30px;
+      background: #fff;
+      border: 1px solid #d0dce8;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .survey-page h1 {
+      margin: 0 0 18px;
+      text-align: center;
+      font-size: 26px;
+      color: #1a4f8b;
+      letter-spacing: 1px;
+    }
+
+    .intro {
+      margin: 0 0 18px;
+      line-height: 1.9;
+      text-indent: 2em;
+      font-size: 14px;
+    }
+
+    .survey-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .survey-table td {
+      padding: 12px 8px;
+      vertical-align: top;
+      border-bottom: 1px solid #edf1f5;
+      line-height: 1.8;
+    }
+
+    .survey-table td.q-label {
+      width: 230px;
+      color: #222;
+      font-weight: bold;
+    }
+
+    .option-list label {
+      display: inline-block;
+      margin-right: 18px;
+      font-weight: normal;
+      white-space: nowrap;
+    }
+
+    .option-list.vertical label {
+      display: block;
+      margin-right: 0;
+    }
+
+    .survey-table input[type="text"] {
+      width: 260px;
+      height: 28px;
+      padding: 2px 8px;
+      border: 1px solid #b5c9dc;
+    }
+
+    .survey-table select {
+      height: 30px;
+      min-width: 160px;
+      border: 1px solid #b5c9dc;
+    }
+
+    .survey-table textarea {
+      width: 95%;
+      height: 70px;
+      margin-top: 6px;
+      padding: 6px;
+      border: 1px solid #b5c9dc;
+      resize: vertical;
+    }
+
+    .sub-label {
+      font-weight: normal;
+      color: #333;
+    }
+
+    .actions {
+      margin-top: 18px;
+      text-align: center;
+    }
+
+    .actions button {
+      min-width: 90px;
+      height: 30px;
+      margin: 0 10px;
+      border: 1px solid #8fb4d4;
+      background: linear-gradient(#fff, #e3eff9);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="survey-page">
+  <h1>图书馆读者调查问卷</h1>
+
+  <p class="intro">
+    为了能够及时了解您对图书馆的需求，提升我校图书馆文献资源建设的质量和水平，更好的为我校教学科研服务，我馆特设计了问卷调查题目如下，请协助填写，谢谢您的合作！
+  </p>
+
+  <form action="#" method="post">
+    <table class="survey-table">
+      <tr>
+        <td class="q-label">1. 您的年级</td>
+        <td>
+          <select name="grade">
+            <option value="">请你选择</option>
+            <option value="大一">大一</option>
+            <option value="大二">大二</option>
+            <option value="大三">大三</option>
+            <option value="大四">大四</option>
+            <option value="研究生">研究生</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="q-label">2. 您的专业</td>
+        <td>
+          <input type="text" name="major" placeholder="请输入您的专业">
+        </td>
+      </tr>
+
+      <tr>
+        <td class="q-label">3. 对于图书馆的阅览环境</td>
+        <td>
+          <div class="option-list">
+            <label><input type="radio" name="environment" value="满意"> 满意</label>
+            <label><input type="radio" name="environment" value="基本满意"> 基本满意</label>
+            <label><input type="radio" name="environment" value="不满意"> 不满意</label>
+          </div>
+          <div style="margin-top: 8px;">
+            <span class="sub-label">您的建议：</span>
+            <textarea name="environment_suggest"></textarea>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="q-label">4. 您到图书馆的原因是（可多选）：</td>
+        <td>
+          <div class="option-list vertical">
+            <label><input type="checkbox" name="reason[]" value="借阅专业图书"> 借阅专业图书</label>
+            <label><input type="checkbox" name="reason[]" value="随便坐坐，翻翻书刊"> 随便坐坐，翻翻书刊</label>
+            <label><input type="checkbox" name="reason[]" value="借阅光盘"> 借阅光盘</label>
+            <label><input type="checkbox" name="reason[]" value="参加图书馆组织的活动"> 参加图书馆组织的活动</label>
+            <label><input type="checkbox" name="reason[]" value="自习，复习功课"> 自习，复习功课</label>
+            <label><input type="checkbox" name="reason[]" value="上网"> 上网</label>
+            <label><input type="checkbox" name="reason[]" value="检索电子文献"> 检索电子文献</label>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="q-label">5. 您到图书馆的频率</td>
+        <td>
+          <div class="option-list">
+            <label><input type="radio" name="frequency" value="几乎每天"> 几乎每天</label>
+            <label><input type="radio" name="frequency" value="每周1-2次"> 每周1-2次</label>
+            <label><input type="radio" name="frequency" value="每月1-2次"> 每月1-2次</label>
+            <label><input type="radio" name="frequency" value="几乎不去"> 几乎不去</label>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="q-label">6. 您对学校的建议</td>
+        <td>
+          <span class="sub-label">请您提出宝贵建议：</span>
+          <textarea name="school_suggest"></textarea>
+        </td>
+      </tr>
+    </table>
+
+    <div class="actions">
+      <button type="submit">提交答案</button>
+      <button type="reset">清空</button>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
