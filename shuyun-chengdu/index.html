@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 响应式视口设置，保证在移动端正常缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 页面标题与描述 -->
+    <title>蜀韵成都 - 成都文化旅游宣传网</title>
+    <meta name="description" content="蜀韵成都——成都文化旅游宣传网站，带您领略天府之国的美食、景点与文化魅力。">
+    <!-- 引入外部样式表，实现结构与样式分离 -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ==================== 页头区域 ==================== -->
+    <header class="site-header">
+        <div class="header-inner container">
+            <!-- 左侧：Logo（纯CSS金色印章）与网站标题 -->
+            <a class="brand" href="index.html">
+                <span class="brand-logo">蜀</span>
+                <h1 class="brand-title">蜀韵成都</h1>
+            </a>
+            <!-- 右侧：导航栏（首页高亮显示） -->
+            <nav class="main-nav">
+                <ul>
+                    <!-- 当前页面为首页，添加 active 类实现高亮 -->
+                    <li><a class="active" href="index.html">首页</a></li>
+                    <li><a href="food.html">美食</a></li>
+                    <li><a href="scenic.html">景点</a></li>
+                    <li><a href="culture.html">文化</a></li>
+                    <li><a href="guide.html">攻略</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==================== 全屏轮播 Banner ==================== -->
+    <section class="banner">
+        <div class="carousel">
+            <!-- 第一张轮播图：大熊猫（图片来源：Pexels 图库） -->
+            <div class="slide active">
+                <img src="https://images.pexels.com/photos/33501926/pexels-photo-33501926.jpeg?auto=compress&cs=tinysrgb&w=1920"
+                     alt="成都大熊猫">
+                <div class="slide-caption">
+                    <h2>熊猫故乡</h2>
+                    <p>与国宝来一场亲密相遇</p>
+                </div>
+            </div>
+            <!-- 第二张轮播图：锦里古街 -->
+            <div class="slide">
+                <img src="https://images.pexels.com/photos/17774908/pexels-photo-17774908.jpeg?auto=compress&cs=tinysrgb&w=1920"
+                     alt="锦里古街">
+                <div class="slide-caption">
+                    <h2>锦里古街</h2>
+                    <p>穿越千年的市井烟火</p>
+                </div>
+            </div>
+            <!-- 第三张轮播图：夜游锦江 -->
+            <div class="slide">
+                <img src="https://images.pexels.com/photos/18839145/pexels-photo-18839145.jpeg?auto=compress&cs=tinysrgb&w=1920"
+                     alt="夜游锦江">
+                <div class="slide-caption">
+                    <h2>夜游锦江</h2>
+                    <p>华灯璀璨的不夜之城</p>
+                </div>
+            </div>
+
+            <!-- 左右切换按钮 -->
+            <button class="arrow prev" aria-label="上一张">&#10094;</button>
+            <button class="arrow next" aria-label="下一张">&#10095;</button>
+
+            <!-- 轮播指示圆点 -->
+            <div class="dots">
+                <button class="active" aria-label="第1张"></button>
+                <button aria-label="第2张"></button>
+                <button aria-label="第3张"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 成都宣传视频区域 ==================== -->
+    <section class="video-section container">
+        <h2 class="section-title">遇见成都</h2>
+        <p class="section-sub">一城烟火，半城闲韵</p>
+        <div class="video-wrapper">
+            <!-- 嵌入B站官方旅游宣传片《问道·成都》：autoplay=0 不自动播放，danmaku=0 关闭弹幕 -->
+            <iframe src="https://player.bilibili.com/player.html?bvid=BV13h41177b5&autoplay=0&danmaku=0"
+                    scrolling="no" frameborder="no" framespacing="0" allowfullscreen="true"
+                    title="成都旅游宣传片《问道·成都》"></iframe>
+        </div>
+    </section>
+
+    <!-- ==================== 成都文字介绍区域 ==================== -->
+    <section class="intro-section">
+        <div class="container">
+            <h2 class="section-title">天府之国 · 蜀韵成都</h2>
+            <p class="section-sub">一座来了就不想走的城市</p>
+            <div class="intro-card">
+                <p>
+                    成都，简称"蓉"，别称"锦城""蓉城"，是四川省省会，一座拥有三千余年建城史的国家历史文化名城。自古便有<span>"天府之国"</span>的美誉，物产丰饶、气候温润，锦江穿城而过，滋养出这片安逸而富庶的土地。这里是国宝大熊猫的故乡，憨态可掬的熊猫与苍翠的竹林，构成了成都最灵动的名片；这里也是美食之都，麻辣鲜香的火锅、街巷飘香的串串、一碗地道的担担面，无不诉说着这座城市对味蕾的极致宠爱。武侯祠的三国遗韵、杜甫草堂的诗意清风、都江堰的千年水利、青城山的幽幽道韵，让古今在此交融。宽窄巷子里，盖碗茶香伴着川剧变脸，慢节奏的市井烟火，正是成都最迷人的生活哲学。一座开放包容的城市，正以最从容的姿态，迎接每一位远道而来的客人。蜀韵成都，等你赴约。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 页尾区域 ==================== -->
+    <footer class="site-footer">
+        <div class="container footer-top">
+            <!-- 页尾品牌标识（纯CSS金色印章） -->
+            <div class="footer-brand">
+                <span class="footer-logo">蜀</span>
+                <span>蜀韵成都</span>
+            </div>
+            <!-- 页尾导航链接 -->
+            <nav class="footer-nav">
+                <a href="index.html">首页</a>
+                <a href="food.html">美食</a>
+                <a href="scenic.html">景点</a>
+                <a href="culture.html">文化</a>
+                <a href="guide.html">攻略</a>
+            </nav>
+            <!-- 版权信息 -->
+            <p class="footer-copy">© 2026 蜀韵成都 · 成都文化旅游宣传网 | 天府之国，熊猫故乡</p>
+        </div>
+    </footer>
+
+    <!-- 引入外部脚本，实现轮播图交互逻辑 -->
+    <script src="js/main.js"></script>
+</body>
+</html>

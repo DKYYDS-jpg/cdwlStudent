@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成都美食 - 蜀韵成都</title>
+    <meta name="description" content="成都美食频道：担担面、龙抄手、夫妻肺片……带你品味舌尖上的天府之国。">
+    <!-- 引入外部样式表，实现结构与样式分离 -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ==================== 页头区域（美食页高亮） ==================== -->
+    <header class="site-header">
+        <div class="header-inner container">
+            <!-- 左侧：Logo（纯CSS金色印章）与网站标题 -->
+            <a class="brand" href="index.html">
+                <span class="brand-logo">蜀</span>
+                <h1 class="brand-title">蜀韵成都</h1>
+            </a>
+            <!-- 右侧：导航栏（当前页"美食"高亮） -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a class="active" href="food.html">美食</a></li>
+                    <li><a href="scenic.html">景点</a></li>
+                    <li><a href="culture.html">文化</a></li>
+                    <li><a href="guide.html">攻略</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==================== 子页面横幅（图片来源：Pexels 图库） ==================== -->
+    <section class="page-hero">
+        <img src="https://images.pexels.com/photos/16266742/pexels-photo-16266742.jpeg?auto=compress&cs=tinysrgb&w=1920"
+             alt="成都夜市美食">
+        <div class="hero-text">
+            <h2>成都美食</h2>
+            <p>舌尖上的天府之国</p>
+        </div>
+    </section>
+
+    <!-- ==================== 经典美食卡片区域 ==================== -->
+    <section class="container card-section">
+        <h2 class="section-title">经典美味</h2>
+        <p class="section-sub">麻辣鲜香，巴适得很</p>
+        <div class="card-grid">
+
+            <!-- 美食卡片：担担面 -->
+            <article class="info-card">
+                <img src="https://images.pexels.com/photos/4223948/pexels-photo-4223948.jpeg?auto=compress&cs=tinysrgb&w=800"
+                     alt="担担面">
+                <div class="card-body">
+                    <h3>担担面</h3>
+                    <p>面条细薄筋道，芽菜肉臊咸香微辣，再淋一勺红油，一碗下肚，巴适得板！</p>
+                </div>
+            </article>
+
+            <!-- 美食卡片：牛肉汤面 -->
+            <article class="info-card">
+                <img src="https://images.pexels.com/photos/31321820/pexels-photo-31321820.jpeg?auto=compress&cs=tinysrgb&w=800"
+                     alt="牛肉汤面">
+                <div class="card-body">
+                    <h3>牛肉汤面</h3>
+                    <p>汤色红亮、牛肉软糯，面条吸饱了汤汁的鲜香，是成都清晨街头最暖的问候。</p>
+                </div>
+            </article>
+
+            <!-- 美食卡片：龙抄手 -->
+            <article class="info-card">
+                <img src="https://images.pexels.com/photos/7719909/pexels-photo-7719909.jpeg?auto=compress&cs=tinysrgb&w=800"
+                     alt="龙抄手">
+                <div class="card-body">
+                    <h3>龙抄手</h3>
+                    <p>皮薄馅嫩、汤鲜味美，红油与清汤各有风味，配一份川味小吃，妙不可言。</p>
+                </div>
+            </article>
+
+            <!-- 美食卡片：夫妻肺片 -->
+            <article class="info-card">
+                <img src="https://images.pexels.com/photos/5848533/pexels-photo-5848533.jpeg?auto=compress&cs=tinysrgb&w=800"
+                     alt="夫妻肺片">
+                <div class="card-body">
+                    <h3>夫妻肺片</h3>
+                    <p>牛肉牛杂片得薄如纸，红油花椒香麻入味，撒一把花生碎与芹菜，冷吃也醉人。</p>
+                </div>
+            </article>
+
+            <!-- 美食卡片：凉面 -->
+            <article class="info-card">
+                <img src="https://images.pexels.com/photos/39007274/pexels-photo-39007274.jpeg?auto=compress&cs=tinysrgb&w=800"
+                     alt="凉面">
+                <div class="card-body">
+                    <h3>凉面</h3>
+                    <p>根根筋道的面条拌上香辣料汁，清爽开胃，是成都夏日街头的人气美味。</p>
+                </div>
+            </article>
+
+            <!-- 美食卡片：夜市小吃 -->
+            <article class="info-card">
+                <img src="https://images.pexels.com/photos/11905679/pexels-photo-11905679.jpeg?auto=compress&cs=tinysrgb&w=800"
+                     alt="夜市小吃">
+                <div class="card-body">
+                    <h3>夜市小吃</h3>
+                    <p>华灯初上，街边小摊香气四溢，翻滚的锅气与吆喝声，藏着成都最鲜活的夜。</p>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ==================== 页尾区域 ==================== -->
+    <footer class="site-footer">
+        <div class="container footer-top">
+            <!-- 页尾品牌标识（纯CSS金色印章） -->
+            <div class="footer-brand">
+                <span class="footer-logo">蜀</span>
+                <span>蜀韵成都</span>
+            </div>
+            <!-- 页尾导航链接 -->
+            <nav class="footer-nav">
+                <a href="index.html">首页</a>
+                <a href="food.html">美食</a>
+                <a href="scenic.html">景点</a>
+                <a href="culture.html">文化</a>
+                <a href="guide.html">攻略</a>
+            </nav>
+            <!-- 版权信息 -->
+            <p class="footer-copy">© 2026 蜀韵成都 · 成都文化旅游宣传网 | 天府之国，熊猫故乡</p>
+        </div>
+    </footer>
+
+</body>
+</html>

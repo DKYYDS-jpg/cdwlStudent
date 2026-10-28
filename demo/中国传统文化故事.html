@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国传统文化故事:悬梁刺股</title>
+    <style>
+        /* 基础重置 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f2f2f2;
+            font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* 主卡片容器 */
+        .card {
+            background-color: #fdfcf3; /* 暖色调米白色 */
+            width: 100%;
+            max-width: 800px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            padding-bottom: 40px;
+        }
+
+        /* 顶部装饰区域 (由于没有原图，这里用渐变和文字占位，你可以替换为实际的灯笼图片) */
+        .banner {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(to bottom, #fff5f5, #fdfcf3);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+        }
+
+        /* 模拟图片的提示文字（实际使用时，请删除此段并插入 <img> 标签） */
+        /* .banner::after {
+            content: "此处放置顶部灯笼背景图";
+            color: #d0a0a0;
+            font-size: 14px;
+            letter-spacing: 2px;
+        } */
+
+        /* 如果你有图片，可以使用下面的样式： */
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+ 
+
+        /* 主标题 */
+        h1 {
+            text-align: center;
+            font-size: 26px;
+            color: #1a1a1a;
+            margin: 30px 0 20px 0;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* 文本内容 */
+        .content {
+            padding: 0 40px;
+            margin-bottom: 30px;
+        }
+
+        .content p {
+            font-size: 16px;
+            color: #333333;
+            line-height: 1.8;
+            text-align: justify;
+            text-indent: 2em; /* 首行缩进 */
+            margin-bottom: 12px;
+        }
+
+        /* 底部成语网格 */
+        .idiom-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px 10px;
+            padding: 0 40px;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .idiom-item {
+            font-size: 17px;
+            color: #222222;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* 响应式调整：手机端时网格变为两列或一列 */
+        @media (max-width: 600px) {
+            .content {
+                padding: 0 20px;
+            }
+            .idiom-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 0 20px;
+            }
+            h1 {
+                font-size: 22px;
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- 顶部图片区域 -->
+        <div class="banner">
+            <!-- 建议：将你原图中的顶部灯笼部分裁剪下来，保存为图片，然后替换下面的注释 -->
+            <img src="./imgs/灯笼.jpg" alt="灯笼背景">
+        </div>
+
+        <!-- 标题 -->
+        <h1>中国传统文化故事:悬梁刺股</h1>
+
+        <!-- 文本内容 -->
+        <div class="content">
+            <p>我们伟大的祖国有着非常悠久的历史。按照古代的传统说法，从传说中的黄帝到现在，大约有四千多年的历史，通常叫做“上下五千年”。期间流传有许多的神话，历史故事等。快来一起了解下我国的文化历史吧。</p>
+            <p>悬梁刺股这一历史典故表现了孙敬、苏秦好学勤读的刻苦精神，表明只要付出时间和精力就会有收获的道理，用以激励人发愤读书学习。如果想要把事情做成功，就要下定决心，目标明确。要肯吃苦，肯努力。世上无难事只怕有心人。</p>
+        </div>
+
+        <!-- 成语列表 -->
+        <div class="idiom-grid">
+            <div class="idiom-item">1. 悬梁刺股</div>
+            <div class="idiom-item">2. 画龙点睛</div>
+            <div class="idiom-item">3. 铁杵磨针</div>
+            <div class="idiom-item">4. 毛遂自荐</div>
+            <div class="idiom-item">5. 孔融让梨</div>
+            <div class="idiom-item">6. 水滴石穿</div>
+            <div class="idiom-item">7. 塞翁失马</div>
+            <div class="idiom-item">8. 自相矛盾</div>
+            <div class="idiom-item">9. 刻舟求剑</div>
+        </div>
+    </div>
+
+</body>
+</html>

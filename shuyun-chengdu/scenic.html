@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成都景点 - 蜀韵成都</title>
+    <meta name="description" content="成都景点频道：熊猫基地、武侯祠、宽窄巷子、望江楼……览尽天府名胜。">
+    <!-- 引入外部样式表，实现结构与样式分离 -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ==================== 页头区域（景点页高亮） ==================== -->
+    <header class="site-header">
+        <div class="header-inner container">
+            <!-- 左侧：Logo（纯CSS金色印章）与网站标题 -->
+            <a class="brand" href="index.html">
+                <span class="brand-logo">蜀</span>
+                <h1 class="brand-title">蜀韵成都</h1>
+            </a>
+            <!-- 右侧：导航栏（当前页"景点"高亮） -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="food.html">美食</a></li>
+                    <li><a class="active" href="scenic.html">景点</a></li>
+                    <li><a href="culture.html">文化</a></li>
+                    <li><a href="guide.html">攻略</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==================== 子页面横幅（图片来源：Pexels 图库） ==================== -->
+    <section class="page-hero">
+        <img src="https://images.pexels.com/photos/34412155/pexels-photo-34412155.jpeg?auto=compress&cs=tinysrgb&w=1920"
+             alt="成都古建筑屋檐">
+        <div class="hero-text">
+            <h2>成都景点</h2>
+            <p>览尽天府名胜，邂逅古今成都</p>
+        </div>
+    </section>
+
+    <!-- ==================== 热门景点卡片区域 ==================== -->
+    <section class="container card-section">
+        <h2 class="section-title">热门景点</h2>
+        <p class="section-sub">一城山水半城诗</p>
+        <div class="card-grid">
+
+            <!-- 景点卡片：大熊猫繁育研究基地 -->
+            <article class="info-card">
+                <img src="https://images.pexels.com/photos/30356870/pexels-photo-30356870.jpeg?auto=compress&cs=tinysrgb&w=800"
+                     alt="大熊猫繁育研究基地">
+                <div class="card-body">
+                    <h3>大熊猫繁育研究基地</h3>
+                    <p>近距离观赏国宝大熊猫的憨态百态，清晨前往还能看到熊猫最活跃的进食时刻。</p>
+                </div>
+            </article>
+
+            <!-- 景点卡片：武侯祠·锦里 -->
+            <article class="info-card">
+                <img src="https://images.pexels.com/photos/35181469/pexels-photo-35181469.jpeg?auto=compress&cs=tinysrgb&w=800"
+                     alt="武侯祠">
+                <div class="card-body">
+                    <h3>武侯祠 · 锦里</h3>
+                    <p>中国唯一君臣合祀祠庙，红墙竹影与古街灯火相映，是成都最出片的打卡地。</p>
+                </div>
+            </article>
+
+            <!-- 景点卡片：宽窄巷子 -->
+            <article class="info-card">
+                <img src="https://images.pexels.com/photos/27403197/pexels-photo-27403197.jpeg?auto=compress&cs=tinysrgb&w=800"
+                     alt="宽窄巷子">
+                <div class="card-body">
+                    <h3>宽窄巷子</h3>
+                    <p>清代古街区，青瓦灰墙间藏着老成都的闲生活、慢生活与新生活。</p>
+                </div>
+            </article>
+
+            <!-- 景点卡片：夜游锦江 -->
+            <article class="info-card">
+                <img src="https://images.pexels.com/photos/18839145/pexels-photo-18839145.jpeg?auto=compress&cs=tinysrgb&w=800"
+                     alt="夜游锦江">
+                <div class="card-body">
+                    <h3>夜游锦江</h3>
+                    <p>华灯初上，乘船夜游锦江，两岸灯火与千年廊桥交相辉映，尽显蓉城夜色之美。</p>
+                </div>
+            </article>
+
+            <!-- 景点卡片：望江楼公园 -->
+            <article class="info-card">
+                <img src="https://images.pexels.com/photos/24415073/pexels-photo-24415073.jpeg?auto=compress&cs=tinysrgb&w=800"
+                     alt="望江楼公园">
+                <div class="card-body">
+                    <h3>望江楼公园</h3>
+                    <p>锦江畔的崇丽阁巍然矗立，园内竹影婆娑，纪念唐代女诗人薛涛，清雅幽静。</p>
+                </div>
+            </article>
+
+            <!-- 景点卡片：青羊宫 -->
+            <article class="info-card">
+                <img src="https://images.pexels.com/photos/29606775/pexels-photo-29606775.jpeg?auto=compress&cs=tinysrgb&w=800"
+                     alt="青羊宫">
+                <div class="card-body">
+                    <h3>青羊宫</h3>
+                    <p>川西第一道观，金瓦飞檐气势恢宏，香火绵延千年，是感受道家文化的好去处。</p>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ==================== 页尾区域 ==================== -->
+    <footer class="site-footer">
+        <div class="container footer-top">
+            <!-- 页尾品牌标识（纯CSS金色印章） -->
+            <div class="footer-brand">
+                <span class="footer-logo">蜀</span>
+                <span>蜀韵成都</span>
+            </div>
+            <!-- 页尾导航链接 -->
+            <nav class="footer-nav">
+                <a href="index.html">首页</a>
+                <a href="food.html">美食</a>
+                <a href="scenic.html">景点</a>
+                <a href="culture.html">文化</a>
+                <a href="guide.html">攻略</a>
+            </nav>
+            <!-- 版权信息 -->
+            <p class="footer-copy">© 2026 蜀韵成都 · 成都文化旅游宣传网 | 天府之国，熊猫故乡</p>
+        </div>
+    </footer>
+
+</body>
+</html>
