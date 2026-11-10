@@ -83,10 +83,13 @@
         <h2 class="section-title">遇见成都</h2>
         <p class="section-sub">一城烟火，半城闲韵</p>
         <div class="video-wrapper">
-            <!-- 嵌入B站官方旅游宣传片《问道·成都》：autoplay=0 不自动播放，danmaku=0 关闭弹幕 -->
-            <iframe src="https://player.bilibili.com/player.html?bvid=BV13h41177b5&autoplay=0&danmaku=0"
-                    scrolling="no" frameborder="no" framespacing="0" allowfullscreen="true"
-                    title="成都旅游宣传片《问道·成都》"></iframe>
+            <!-- HTML5 原生视频播放器：controls 显示播放控件，poster 为封面图 -->
+            <video class="promo-video" controls preload="metadata" poster="video/poster.jpg">
+                <!-- 视频源：成都宣传片（本地 mp4 文件） -->
+                <source src="video/chengdu-promo.mp4" type="video/mp4">
+                <!-- 浏览器不支持 video 标签时的提示 -->
+                您的浏览器不支持视频播放，请更换现代浏览器后重试。
+            </video>
         </div>
     </section>
 

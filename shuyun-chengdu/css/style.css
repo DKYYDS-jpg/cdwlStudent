@@ -291,12 +291,12 @@ button { font-family: inherit; }
     box-shadow: 0 12px 32px rgba(166, 124, 0, 0.18);
 }
 
-/* 视频容器内的 iframe（B站播放器）：铺满 16:9 容器 */
-.video-wrapper iframe {
+/* 视频容器内的 video 标签（HTML5 原生播放器）：铺满 16:9 容器 */
+.video-wrapper video {
     width: 100%;
     height: 100%;
-    border: 0;
     display: block;
+    object-fit: cover;
 }
 
 /* =========================================================
