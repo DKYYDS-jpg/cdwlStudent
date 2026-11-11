@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>爱宠知识</title>
+  <style>
+    /* (1) 清空所有默认边距 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      /* 浏览器居中显示 */
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f4f4f4; /* 网页最底层背景色 */
+      font-family: "Microsoft YaHei", sans-serif;
+    }
+
+    /* 外面的盒子：370px * 550px，圆角15px，半透明阴影，背景平铺 */
+    .pet-box {
+      width: 370px;
+      height: 550px;
+      border-radius: 15px;
+      
+      /* 背景平铺：这里用 CSS 渐变模拟了图片里的绿色网格背景。
+         如果你有真实的背景图片，请换成：background: url('你的图片路径.png') repeat; */
+      background-color: #8cc63f;
+      background-image: 
+        radial-gradient(#7bb030 15%, transparent 16%),
+        radial-gradient(#7bb030 15%, transparent 16%);
+      background-size: 20px 20px;
+      background-position: 0 0, 10px 10px;
+      
+      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4); /* 半透明阴影 */
+      position: relative;
+      padding: 20px 10px 0 10px;
+    }
+
+    /* (2) 标题：左侧有一条竖线，颜色为 #bebe2c */
+    .pet-box h1 {
+      font-size: 24px;
+      color: #fff; /* 图片中标题字是白色的 */
+      margin-top: 15px;
+      margin-left: 5px;
+      margin-bottom: 25px;
+      padding-left: 12px;
+      border-left: 6px solid #bebe2c; /* 按要求设置的竖线颜色 */
+      letter-spacing: 2px;
+    }
+
+    /* (3) 里面的盒子：350px * 460px，白色背景，半透明阴影 */
+    .pet-content {
+      width: 350px;
+      height: 460px;
+      background: #ffffff;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* 半透明阴影 */
+      padding: 10px 15px;
+      overflow: hidden;
+    }
+
+    .pet-content ul {
+      list-style: none; /* 清除默认圆点 */
+    }
+
+    /* (4) 列表行高 48px，左侧列表符号，下方虚线 #ccc */
+    .pet-content li {
+      height: 48px;
+      line-height: 48px;
+      border-bottom: 1px dashed #ccc; /* 下方虚线 */
+      position: relative;
+      padding-left: 25px; /* 如果你的 bg.gif 比较宽，可以把 25px 改成 30px 或 35px */
+    }
+
+    /* 使用伪元素模拟左侧的小狗爪印符号 (🐾) */
+    /* 使用背景图作为左侧列表符号 */
+    .pet-content li::before {
+      content: ""; /* 清空文字内容 */
+      position: absolute;
+      left: 0;
+      top: 50%; /* 垂直居中 */
+      transform: translateY(-50%); /* 垂直居中 */
+      width: 16px; /* 根据你的 bg.gif 图片实际大小调整宽高 */
+      height: 16px;
+      background: url('./images/tb.gif') no-repeat center center;
+      background-size: contain; /* 保证小图标完整显示且不变形 */
+    }
+
+    /* (5) 超链接样式：字体颜色#333，无下划线，字体大小 18px */
+    .pet-content a {
+      text-decoration: none;
+      color: #333;
+      font-size: 18px;
+      display: block;
+      transition: all 0.2s;
+    }
+
+    /* 悬停时：文字加粗，颜色 #739311，增加文字阴影 #bebe2c */
+    .pet-content a:hover {
+      font-weight: bold;
+      color: #739311;
+      text-shadow: 1px 1px 2px #bebe2c;
+    }
+  </style>
+</head>
+<body>
+  <div class="pet-box">
+    <h1>爱宠知识</h1>
+    
+    <div class="pet-content">
+      <ul>
+        <li><a href="#">养狗比养猫对健康更有利</a></li>
+        <li><a href="#">日本正宗柴犬亮相，你怎么看柴犬？</a></li>
+        <li><a href="#">狗狗歌曲《新年旺旺》</a></li>
+        <li><a href="#">带宠兜风，开车带宠需要注意什么？</a></li>
+        <li><a href="#">【爆笑】这狗狗太不给力了！</a></li>
+        <li><a href="#">狗狗与男童相同着装拍有爱造型照</a></li>
+        <li><a href="#">狗狗各个阶段健康大事件</a></li>
+        <li><a href="#">调皮宠物狗陷在沙发里的搞笑瞬间</a></li>
+        <li><a href="#">为什么每次大小便后，会用脚踢土？</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

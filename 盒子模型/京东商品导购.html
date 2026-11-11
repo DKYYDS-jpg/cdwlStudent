@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>京东商品导购</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fff;
+      font-family: "Microsoft YaHei", sans-serif;
+    }
+
+    /* 导购区：740px * 620px，圆角15px，居中 */
+    .guide {
+      width: 740px;
+      height: 620px;
+      padding: 20px 30px;
+      background: #fff;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* 红色大标题 */
+    .main-title {
+      color: red;
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 25px;
+      letter-spacing: 2px;
+    }
+
+    /* 商品列表容器：利用 flex 布局自动排成 3列2行 */
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    /* 商品卡片外框 */
+    .product {
+      width: 210px;      /* 宽度 */
+      height: 235px;     /* 高度 */
+      padding: 8px;      /* 让图片和紫色边框之间留有白色的内边距 */
+      background: #fff;
+      border: 10px groove #9966cc; /* 凹槽边框 */
+      box-shadow: 0 0 10px #ccc;   /* 阴影 */
+      transition: 0.2s;
+      cursor: pointer;             /* 悬停变手型 */
+      
+      /* 内部使用 flex 让图片绝对居中 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 悬停：边框变虚线，颜色#9999cc */
+    .product:hover {
+      border-style: dashed;
+      border-color: #9999cc;
+    }
+
+    /* 直接设置图片大小 */
+    .product img {
+      max-width: 100%;   /* 保证图片宽度不超出框 */
+      max-height: 100%;  /* 保证图片高度不超出框 */
+      object-fit: contain; /* 图片完整显示且不变形 */
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="guide">
+    <!-- 红色大标题 -->
+    <h1 class="main-title">京东商品导购</h1>
+    
+    <div class="product-list">
+      <!-- 商品1：直接放图片，无需再写文字 -->
+      <div class="product">
+        <img src="images/image5-2-1.jpg" alt="麦包包">
+      </div>
+
+      <!-- 商品2 -->
+      <div class="product">
+        <img src="images/image5-2-2.jpg" alt="adidas休闲鞋">
+      </div>
+
+      <!-- 商品3 -->
+      <div class="product">
+        <img src="images/image5-2-3.jpg" alt="NB女子复古鞋">
+      </div>
+
+      <!-- 商品4 -->
+      <div class="product">
+        <img src="images/image5-2-4.jpg" alt="VANS女子硫化鞋">
+      </div>
+
+      <!-- 商品5 -->
+      <div class="product">
+        <img src="images/image5-2-5.jpg" alt="匡威经典低帮鞋">
+      </div>
+
+      <!-- 商品6 -->
+      <div class="product">
+        <img src="images/image5-2-6.jpg" alt="Belle羊皮女鞋">
+      </div>
+    </div>
+  </div>
+</body>
+</html>
